@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Approximation Fixpoint Theory: A Tutorial</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Approximation Fixpoint Theory: A Tutorial" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://jesseheyninck.github.io/AFT/" />
+<meta property="og:url" content="https://jesseheyninck.github.io/AFT/" />
+<meta property="og:site_name" content="AFT" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Approximation Fixpoint Theory: A Tutorial" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"Approximation Fixpoint Theory: A Tutorial","name":"AFt","url":"https://jesseheyninck.github.io/AFt/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="style.css">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/CaKR/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Approximation Fixpoint Theory: A Tutorial</h1>
+      <h2 class="project-tagline"></h2>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+<h2 id="scope--description">Scope &amp; Description</h2>
+<p>Semantics of various formalisms in fields of artificial intelligence, such as knowledge representation,
+can be described by fixpoints of corresponding operators. For example, in many logics (e.g. propositional or modal logics) theories are fixpoints of the underlying consequence operator. Likewise, in logic programming, default logic, or formal argumentation, all the major semantics can be formulated as different types of fixpoints of the same operator. Such operators are often non-monotonic, and so their fixpoints cannot be guaranteed to exist, or be defined constructively. In order to deal with this illusive nature of the fixpoints, Denecker, Marek and Truszczyński introduced a method for approximating each value z of the underlying operator by a pair of elements (x, y). These elements represent lower and upper bounds on z, and so a corresponding approximation operator for the original, non-monotonic operator, is constructed. A natural requirement is that the approximating operator is precision-monotonic, intuitively meaning that more precise inputs of the operator give rise to more precise outputs. This requirement ensures (by Tarski and Knaster’s Fixpoint Theorem) that the approximating operator has fixpoints that can be constructively computed, and approximate the fixpoints of the approximated operator (whenever such fixpoints exist). Many existing formalisms in knowledge representation where shown to make implicit use of approximation fixpoint theory (e.g. logic programming, default logic, autoepistemic logic, abstract dialectical frameworks, hybrid MKNF, SCHACL, and active integrity constraints), and the semantics of several new formalisms were obtained by a straightforward application of approximation fixpoint theory (e.g. extensions of logic programs, weighted abstract dialectical frameworks (ADFs), access control policies and second-order logic extended with non-monotone inductive definitions).</p>
+
+<p>The goal of this tutorial is to introduce approximation theory to the community of AI-researchers. The emphasis of this tutorial will be on the motivation and applications of approximation fixpoint theory. This emphasis will be achieved by a detailed study of some of the formalisms to which the application of approximation fixpoint theory has received, historically, the most attention, namely logic programming and (weighted) abstract dialectical frameworks In more detail, we will use this formalisms to highlight the challenges that occur when developing a semantics for a KR-language, and how approximation fixpoint theory allows to surmount this challenges. In doing so, we will organically pass along the main AFT-based semantics (e.g. the stable, well-founded and Kripke-Kleene semantics) and constructive techniques for obtaining approximation operators (e.g. the trivial and ultimate approximation operator).</p>
+
+<h2 id="target--audience">Potential target audience, prerequisite knowledge, and learning goals</h2>
+<p>
+The tutorial is open for any researcher in knowledge representation, regardless of whether they have a background in knowledge representation or algebra. All necessary mathematical background will be introduced in the tutorial, as well as formalisms from knowledge representation that serve as guiding example, such as logic programming.</p>
+
+<p>The goal of the tutorial is to introduce the basic ideas underlying approximation fixpoint theory as a tool for the definition and study of semantics of knowledge representation formalisms, as well asthe language-independent study of concepts in knowledge representation. The learning outcomes of this tutorial are the following:
+<ul> 
+<li>Understand the role of operators and fixpoints in knowledge representation.</li>
+ <li> Understand the concept of an approximation in knowledge representation, and its connection with three-and four-valued logics. </li>
+ <li> Understand the idea of an approximation of a potentially non-monotonic operator, and how this allows to approximate fixpoints of the original operator. </li>
+ <li> Understand how the stable approximator is constructed, and how this allows to define the well-founded fixpoint.</li>
+ <li> Realize the benefit of the algebraic approach to knowledge representation underlying approximation fixpoint theory, and how this allows to give a language-independent account of important concepts occurring in different sub-fields of knowledge representation.</li>
+</ul>
+</p>
+
+
+<h2 id="tutorial outline">Tutorial Outline</h2>
+<p> The tutorial will take place over two 1:45 hour slots and has the following contents:
+<ul>
+  <li>Motivation and history: a guided tour through the history of logic programming
+  <ul>
+  <li> Syntax of normal logic programs.</li>
+  <li> First semantics: completion, minimal and perfect models.</li>
+  <li> Well-founded and stable semantics, immediate consequence operator.</li>
+  <li> Four-valued interpretations and approximation operators.</li>
+  <li> Stable approximations.</li>
+  <li> Extending logic programming syntax: aggregates.</li>
+  </ul>
+  </li>
+  
+  <li> An abstract view: from logic programming to (general) AFT
+    <ul>
+    <li> Lattices, complete lattices and operators.</li>
+    <li> Fixpoints of operators and (Knaster and) Tarski’s fixpoint theorem.</li>
+    <li> Bilattices and approximation operators, Kripke-Kleene semantics.</li>
+    <li> Stable operators and well-founded semantics.</li>
+    <li> Ultimate approximations.</li>
+    </ul>
+  </li>
+  
+  <li> A second application: weighted abstract dialectical frameworks
+    <ul>
+    <li> Boolean ADF </li>
+    <li> Weighted ADFs</li>
+ </ul>
+  </li>
+  
+   <li> Algebraically Developed Concepts
+    <ul>
+    <li> Modularity </li>
+    <li> Groundedness</li>
+    <li> Complexity</li>
+ </ul>
+  </li>
+</ul>
+
+<h2 id="KR2024">KR 2024 Tutorial</h2>
+This workshop is part of the <a href=https://kr.org/KR2024/> workshop and tutorial programme</a> of the 21st International Conference on Principles of Knowledge Representation and Reasoning (KR2024).
+
+
+<h2 id="lecturers">Course Lecturers</h2>
+
+<p>
+<table width="600" cellspacing="0" cellpadding="0" border=
+      "0" style="border-spacing: 0 20px;">
+   <tr>
+          <td style="vertical-align: top;width: 170px;">
+          <img src="Hannes.jpg" style="width: 150px;margin: 10px;margin-top: 2px;">            
+          </td>
+          <td style="vertical-align: top;">
+          <a href=
+            "https://sites.google.com/view/jesseheyninck"
+            target="_parent" class="invited">Hannes Straß</a> TU Dresden, Germany
+<p style="text-align: justify;margin-top: 0px;">
+Hannes Straß is a research associate at the Computational Logic Group. He received his PhD and habilitation both from Leipzig University in 2012 and 2017, respectively. His habilitation thesis is titled “Abstract Dialectical Frameworks. An Analysis of their Properties and Role in Knowledge Representation and Reasoning”. His PhD thesis “Default Reasoning about Actions” was supervised by Prof. Michael Thielscher and Prof. Gerhard Brewka.
+</p>
+</td>
+  </tr>      
+      
+        <tr>
+          <td style="vertical-align: top;width: 170px;">
+          <img src="Jesse.jpg" style="width: 150px;margin: 10px;margin-top: 2px;">            
+          </td>
+          <td style="vertical-align: top;">
+          <a href=
+            "https://sites.google.com/view/jesseheyninck"
+            target="_parent" class="invited">Jesse Heyninck</a> Open Universiteit, the Netherlands
+<p style="text-align: justify;margin-top: 0px;">
+ Jesse Heyninck has completed his PhD in Philosophy at the Faculty of Philosophy and Educational Sciences at the Ruhr University in Bochum, Germany. He is currently an assistant professor in computer science at the Open Universiteit Heerlen, the Netherlands and an honorary research associate at the Department of Computer Science at the University of Cape Town. 
+</p>
+</td>
+  </tr>
+  </table>
+</p>
+      
+
+
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> | <a href="https://krportal.org/terms/">Terms </a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
+
